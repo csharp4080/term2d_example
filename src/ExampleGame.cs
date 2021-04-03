@@ -51,11 +51,11 @@ namespace example
             // Update View
             Canvas canvas = updateInfo.ActiveCanvas;
             // Alternate Between Blue & Green Every 2 Seconds
-            if (timer > 2.0)
+            if (timer > 5.0)
             {
                 if (canvas.DefaultBackgroundColor == ConsoleColor.Blue)
                 {
-                    canvas.DefaultBackgroundColor = ConsoleColor.Green;
+                    canvas.DefaultBackgroundColor = ConsoleColor.DarkBlue;
                 }
                 else
                 {
