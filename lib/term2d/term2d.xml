@@ -166,6 +166,12 @@
                 otherwise false.
             </summary>
         </member>
+        <member name="T:term2d.DefaultInitConfig">
+            <summary>
+                Performs default console initialization
+                procedures for UNIX-like systems.
+            </summary>
+        </member>
         <member name="T:term2d.Game">
             <summary>
                 Games using the term2D framework should
@@ -199,6 +205,12 @@
                 true to continue running, false to end the game loop.
             </returns>
         </member>
+        <member name="T:term2d.InitConfig">
+            <summary>
+                An interface to abstract initialization
+                procedures for different platforms.
+            </summary>
+        </member>
         <member name="T:term2d.Term2D">
             <summary>
                 The core of the framework, initializes
@@ -223,7 +235,8 @@
         </member>
         <member name="M:term2d.Term2D.Start(term2d.Game)">
             <summary>
-                Sets the target FPS for the game loop.
+                Starts the provided game using the
+                framework.
             </summary>
         </member>
         <member name="M:term2d.Term2D.GameLoop(term2d.Game)">
@@ -255,6 +268,43 @@
         <member name="P:term2d.UpdateInfo.DeltaTime">
             <summary>
                 Time since the last update, in seconds.
+            </summary>
+        </member>
+        <member name="T:term2d.WindowsInitConfig">
+            <summary>
+                A console configuration procedure specifically
+                for Windows systems that prevents problematic
+                default behaviors of cmd.exe through native functions.
+            </summary>
+        </member>
+        <member name="F:term2d.WindowsInitConfig.ENABLE_WRAP_AT_EOL_OUTPUT">
+            <summary>
+                Identifies a bit corresponding to a console setting
+                that must be enabled to prevent auto-scrolling
+                issues that prevent proper rendering.
+            </summary>
+        </member>
+        <member name="F:term2d.WindowsInitConfig.STD_OUTPUT_HANDLE">
+            <summary>
+                Used to request a standard output handle
+                using the Win32 API.
+            </summary>
+        </member>
+        <member name="M:term2d.WindowsInitConfig.GetStdHandle(System.Int32)">
+            <summary>
+                Used to request a standard output handle
+                using the Win32 API.
+            </summary>
+        </member>
+        <member name="M:term2d.WindowsInitConfig.GetConsoleMode(System.IntPtr,System.UInt32@)">
+            <summary>
+                Writes an unsigned integer with bits
+                representing console configuration settings.
+            </summary>
+        </member>
+        <member name="M:term2d.WindowsInitConfig.SetConsoleMode(System.IntPtr,System.UInt32)">
+            <summary>
+                Sets altered console configuration settings.
             </summary>
         </member>
     </members>
