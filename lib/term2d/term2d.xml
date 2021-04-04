@@ -137,6 +137,19 @@
                 row and column with default colors.
             </summary>
         </member>
+        <member name="M:term2d.Canvas.DrawText(System.Int32,System.Int32,System.String,System.ConsoleColor,System.ConsoleColor)">
+            <summary>
+                Draws a string horizontally starting
+                from the specified row and column.
+            </summary>
+        </member>
+        <member name="M:term2d.Canvas.DrawText(System.Int32,System.Int32,System.String)">
+            <summary>
+                Draws a string horizontally starting
+                from the specified row and column
+                using default colors.
+            </summary>
+        </member>
         <member name="T:term2d.ConsoleInputThread">
             <summary>
                 Silently reads keys entered into the console to take user

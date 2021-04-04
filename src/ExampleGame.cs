@@ -82,6 +82,8 @@ namespace example
                     }
                 }
             }
+            double actualFPS = 1.0 / updateInfo.DeltaTime;
+            canvas.DrawText(0, 0, $" == term2d demo == FPS: {actualFPS:0.0} == Timer: {timer:0.00} ==", ConsoleColor.Black, ConsoleColor.White);
             return true;
         }
     }
