@@ -70,11 +70,29 @@ namespace example
             {
                 for (int col = 0; col < width; col++)
                 {
-                    if (col == 0 || row == 0 ||
-                        col == width - 1 ||
-                        row == height - 1)
+                    if (row == 0 && col == 0)
                     {
-                        canvas.Draw(row, col, '█');
+                        canvas.Draw(row, col, '╔');
+                    }
+                    else if (row == 0 && col == width - 1)
+                    {
+                        canvas.Draw(row, col, '╗');
+                    }
+                    else if (row == height - 1 && col == 0)
+                    {
+                        canvas.Draw(row, col, '╚');
+                    }
+                    else if (row == height - 1 && col == width - 1)
+                    {
+                        canvas.Draw(row, col, '╝');
+                    }
+                    else if (row == 0 || row == height - 1)
+                    {
+                        canvas.Draw(row, col, '═');
+                    }
+                    else if (col == 0 || col == width - 1)
+                    {
+                        canvas.Draw(row, col, '║');
                     }
                     else if (col == playerX && row == playerY)
                     {
@@ -83,7 +101,7 @@ namespace example
                 }
             }
             double actualFPS = 1.0 / updateInfo.DeltaTime;
-            canvas.DrawText(0, 0, $" == term2d demo == FPS: {actualFPS:0.0} == Timer: {timer:0.00} ==", ConsoleColor.Black, ConsoleColor.White);
+            canvas.DrawText(0, 1, $"══ term2d demo ══ FPS: {actualFPS:0.0} ══ Timer: {timer:0.00} ══");
             return true;
         }
     }
